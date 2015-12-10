@@ -86,16 +86,16 @@ static NSString * const kStringsTableName = @"FDTake";
 {
     self.sources = nil;
     self.buttonTitles = nil;
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeCamera)];
+    if ([UIImagePickerController isSourceTypeAvailable:1]) {
+        [self.sources addObject:@(1)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kTakePhotoKey]];
     }
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypePhotoLibrary)];
+    if ([UIImagePickerController isSourceTypeAvailable:0]) {
+        [self.sources addObject:@(0)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromLibraryKey]];
     }
-    else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeSavedPhotosAlbum)];
+    else if ([UIImagePickerController isSourceTypeAvailable:2]) {
+        [self.sources addObject:@(2)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromPhotoRollKey]];
     }
     [self _setUpActionSheet:sender];
@@ -111,16 +111,16 @@ static NSString * const kStringsTableName = @"FDTake";
 {
     self.sources = nil;
     self.buttonTitles = nil;
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeCamera)];
+    if ([UIImagePickerController isSourceTypeAvailable:1]) {
+        [self.sources addObject:@(1)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kTakeVideoKey]];
     }
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypePhotoLibrary)];
+    if ([UIImagePickerController isSourceTypeAvailable:0]) {
+        [self.sources addObject:@(0)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromLibraryKey]];
     }
-    else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeSavedPhotosAlbum)];
+    else if ([UIImagePickerController isSourceTypeAvailable:2]) {
+        [self.sources addObject:@(2)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromPhotoRollKey]];
     }
     [self _setUpActionSheet:sender];
@@ -136,17 +136,17 @@ static NSString * const kStringsTableName = @"FDTake";
 {
     self.sources = nil;
     self.buttonTitles = nil;
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeCamera)];
+    if ([UIImagePickerController isSourceTypeAvailable:1]) {
+        [self.sources addObject:@(1)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kTakePhotoKey]];
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeCamera)];
+        [self.sources addObject:@(1)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kTakeVideoKey]];
     }
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypePhotoLibrary)];
+    if ([UIImagePickerController isSourceTypeAvailable:0]) {
+        [self.sources addObject:@(0)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromLibraryKey]];
-    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-        [self.sources addObject:@(UIImagePickerControllerSourceTypeSavedPhotosAlbum)];
+    } else if ([UIImagePickerController isSourceTypeAvailable:2]) {
+        [self.sources addObject:@(2)];
         [self.buttonTitles addObject:[self textForButtonWithTitle:kChooseFromPhotoRollKey]];
     }
     [self _setUpActionSheet:sender];
@@ -179,7 +179,7 @@ static NSString * const kStringsTableName = @"FDTake";
     } else {
         self.imagePicker.sourceType = [(self.sources)[buttonIndex] integerValue];
         
-        if ((self.imagePicker.sourceType==UIImagePickerControllerSourceTypeCamera) || (self.imagePicker.sourceType==UIImagePickerControllerSourceTypeCamera)) {
+        if ((self.imagePicker.sourceType==1) || (self.imagePicker.sourceType==1)) {
             if (self.defaultToFrontCamera && [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
                 [self.imagePicker setCameraDevice:UIImagePickerControllerCameraDeviceFront];
             }
